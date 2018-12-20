@@ -1,7 +1,7 @@
-# marius
+# lars
 
 Code for my personal npm card:
 
 ```bash
-npx marius
+npx lars
 ```
