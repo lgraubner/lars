@@ -1,25 +1,19 @@
-#! /usr/bin/env node
-
 const boxen = require('boxen');
-const { bold, cyan } = require('chalk').default;
+const { bold, blue } = require('chalk').default;
 
-const lines = [
-  bold('Lars Graubner'),
-  'Creating apps with React and React Native',
-  '',
-  bold('       Web: ') + cyan('https://larsgraubner.com'),
-  bold('   Twitter: ') + cyan('https://twitter.com/larsgraubner'),
-  bold('    GitHub: ') + cyan('https://github.com/lgraubner'),
-  bold('  LinkedIn: ') + cyan('https://linkedin.com/in/larsgraubner')
-];
+const message = `  ${bold('Lars Graubner')}
+  Creating apps with React and React Native
 
-const message = lines.join('\n');
+  ${bold('       Web: ')} ${blue('https://larsgraubner.com')}
+  ${bold('   Twitter: ')} ${blue('https://twitter.com/larsgraubner')}
+  ${bold('    GitHub: ')} ${blue('https://github.com/lgraubner')}
+  ${bold('  LinkedIn: ')} ${blue('https://linkedin.com/in/larsgraubner')}`;
 
 const box = boxen(message, {
-  borderColor: 'cyan',
+  borderColor: 'blue',
   borderStyle: 'round',
   margin: 1,
   padding: 1
 });
 
-process.stdout.write(box + '\n');
+process.stdout.write(box);

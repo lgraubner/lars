@@ -1,18 +1,24 @@
 {
   "name": "lars",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Lars Graubner",
-  "main": "./src/index.js",
+  "main": "./dist/cli.js",
   "files": [
     "src/"
   ],
   "bin": {
-    "lars": "./src/index.js"
+    "lars": "./dist/cli.js"
   },
   "author": "Lars Graubner <mail@larsgraubner.de> (https://larsgraubner.com)",
   "license": "MIT",
   "dependencies": {
-    "boxen": "^2.1.0",
-    "chalk": "^2.4.1"
+    "boxen": "2.1.0",
+    "chalk": "2.4.1"
+  },
+  "devDependencies": {
+    "parcel-bundler": "1.11.0"
+  },
+  "scripts": {
+    "build": "parcel build src/index.js && echo '#!/usr/bin/env node' | cat - dist/index.js > dist/cli.js && rm dist/index.*"
   }
 }
