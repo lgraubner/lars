@@ -4,7 +4,7 @@
   "description": "Lars Graubner",
   "main": "./dist/cli.js",
   "files": [
-    "src/"
+    "dist/"
   ],
   "bin": {
     "lars": "./dist/cli.js"
