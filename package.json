@@ -2,12 +2,12 @@
   "name": "lars",
   "version": "1.1.3",
   "description": "Lars Graubner",
-  "main": "./dist/cli.js",
+  "main": "./dist/index.js",
   "files": [
     "dist/"
   ],
   "bin": {
-    "lars": "./dist/cli.js"
+    "lars": "./dist/index.js"
   },
   "author": "Lars Graubner <mail@larsgraubner.de> (https://larsgraubner.com)",
   "license": "MIT",
@@ -16,9 +16,18 @@
     "chalk": "2.4.1"
   },
   "devDependencies": {
-    "parcel-bundler": "1.11.0"
+    "parcel-bundler": "1.11.0",
+    "parcel-plugin-shebang": "1.2.2"
   },
   "scripts": {
-    "build": "parcel build src/index.js --target node --bundle-node-modules && echo '#!/usr/bin/env node' | cat - dist/index.js > dist/cli.js && rm dist/index.*"
-  }
+    "build": "parcel build src/index.js --no-source-maps --target node --bundle-node-modules --experimental-scope-hoisting"
+  },
+  "shebang": [
+    {
+      "interpreter": "node",
+      "files": [
+        "./src/index.js"
+      ]
+    }
+  ]
 }
